@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EdMo Grows — Growing spaces for people &amp; pollinators</title>
+  <meta name="description" content="Agroecological growing consultancy, marketing, content, websites and public speaking. I design edible growing spaces that feed people and enhance biodiversity.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Corben:wght@400;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <style>
+/* ============================================================
+   EdMo Grows — site styles
+   Palette: deep forest green, warm cream, terracotta accent
+   ============================================================ */
+
+:root {
+  --forest: #1e3d2b;
+  --forest-deep: #142a1d;
+  --moss: #4a6b52;
+  --cream: #f7f3ea;
+  --cream-dark: #efe8d9;
+  --terracotta: #c96f4a;
+  --terracotta-dark: #b05a37;
+  --ink: #22301f;
+  --ink-soft: #4d5a4a;
+
+  --font-display: "Corben", "Cooper Black", Georgia, serif;
+  --font-body: "Figtree", -apple-system, sans-serif;
+
+  --max-width: 1120px;
+  --radius: 14px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.2; color: var(--forest); }
+
+h1 { font-size: clamp(2.4rem, 4.6vw, 2.75rem); letter-spacing: -0.01em; }
+.br-desktop { display: none; }
+@media (min-width: 881px) {
+  .br-desktop { display: inline; }
+}
+h2 { font-size: clamp(1.7rem, 3.4vw, 2.6rem); margin-bottom: 1rem; }
+h3 { font-size: 1.35rem; margin-bottom: .5rem; }
+
+em { font-style: italic; }
+h1 em { color: var(--terracotta); }
+
+p { color: var(--ink-soft); }
+p + p { margin-top: 1em; }
+
+.eyebrow {
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: .9rem;
+}
+
+.section { padding: 6rem 1.5rem; }
+.section-inner { max-width: var(--max-width); margin: 0 auto; }
+.section-inner.narrow { max-width: 720px; text-align: center; }
+.center { text-align: center; margin-top: 2rem; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: .85rem 1.8rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: .95rem;
+  text-decoration: none;
+  transition: transform .18s ease, background .18s ease, color .18s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: var(--terracotta); color: #fff; }
+.btn-primary:hover { background: var(--terracotta-dark); }
+.btn-ghost { border: 1.5px solid var(--forest); color: var(--forest); }
+.btn-ghost:hover { background: var(--forest); color: var(--cream); }
+.btn-lg { padding: 1.05rem 2.3rem; font-size: 1.05rem; }
+
+/* ---------- Header / Nav ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(247, 243, 234, .88);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(30, 61, 43, .08);
+}
+.nav {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo { display: flex; align-items: center; }
+.nav-logo img {
+  height: 72px;
+  width: auto;
+  display: block;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--ink);
+  font-size: .95rem;
+  font-weight: 500;
+}
+.nav-links a:hover { color: var(--terracotta); }
+.nav-links .nav-cta {
+  background: var(--forest);
+  color: var(--cream);
+  padding: .55rem 1.3rem;
+  border-radius: 999px;
+}
+.nav-links .nav-cta:hover { background: var(--forest-deep); color: var(--cream); }
+
+.nav-toggle { display: none; }
+
+/* ---------- Hero ---------- */
+.hero {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  align-items: center;
+  gap: 3rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 5.5rem 1.5rem 6rem;
+}
+.hero-sub {
+  margin-top: 1.4rem;
+  font-size: 1.15rem;
+  max-width: 34rem;
+}
+.hero-actions { margin-top: 2.2rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero-photo {
+  width: 100%;
+  max-width: 420px;
+  justify-self: end;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: 0 18px 44px rgba(30, 61, 43, .18);
+}
+
+/* ---------- Stats ---------- */
+.stats { background: var(--forest); padding: 3.5rem 1.5rem; }
+.stats ul {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  list-style: none;
+  text-align: center;
+}
+.stats strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--cream);
+  line-height: 1.1;
+}
+.stats span {
+  display: block;
+  margin-top: .5rem;
+  color: rgba(247, 243, 234, .75);
+  font-size: .92rem;
+  max-width: 15rem;
+  margin-inline: auto;
+}
+
+/* ---------- Story ---------- */
+.split {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.media-placeholder {
+  background: var(--cream-dark);
+  border: 1.5px dashed rgba(30, 61, 43, .25);
+  border-radius: var(--radius);
+  aspect-ratio: 4 / 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--moss);
+}
+.media-placeholder svg { width: 90px; height: 90px; }
+.media-placeholder p { font-size: .85rem; letter-spacing: .06em; text-transform: uppercase; color: var(--moss); }
+.media-placeholder.small { aspect-ratio: 4 / 3; }
+.story-media img, .work-media img {
+  width: 100%;
+  border-radius: var(--radius);
+  display: block;
+  object-fit: cover;
+}
+.story-media img { aspect-ratio: 4 / 5; }
+.work-media img { aspect-ratio: 4 / 3; }
+.work-media video {
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius);
+  display: block;
+  margin: 0 auto;
+  background: var(--forest-deep);
+  transition: max-width .45s ease;
+}
+.work-media video.expanded {
+  max-width: 420px;
+  aspect-ratio: auto;
+}
+
+/* ---------- Services ---------- */
+.services { background: var(--cream-dark); }
+.service-grid {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.service-card {
+  background: var(--cream);
+  border-radius: var(--radius);
+  padding: 2.2rem;
+  border: 1px solid rgba(30, 61, 43, .07);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(30, 61, 43, .1);
+}
+.service-card.wide { grid-column: 1 / -1; }
+.service-icon { font-size: 1.8rem; margin-bottom: .9rem; }
+
+/* ---------- Work ---------- */
+.work-list { margin-top: 3rem; display: flex; flex-direction: column; gap: 4rem; }
+.work-item {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 3rem;
+  align-items: center;
+}
+.work-item:nth-child(even) .work-media { order: 2; }
+.work-role {
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: .8rem;
+}
+.work-copy h3 span { color: var(--moss); font-size: 1.05rem; }
+.badge {
+  display: inline-block;
+  background: var(--forest);
+  color: var(--cream);
+  font-size: .68rem;
+  padding: .2rem .7rem;
+  border-radius: 999px;
+  letter-spacing: .08em;
+  vertical-align: middle;
+  margin-left: .4rem;
+}
+
+/* ---------- Speaking ---------- */
+.speaking { background: var(--forest); }
+.speaking .eyebrow { color: #e8b294; }
+.speaking h2 { color: var(--cream); }
+.speaking-sub { color: rgba(247, 243, 234, .8); max-width: 44rem; }
+.speaking-logos {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+}
+.speaking-logos li {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--cream);
+  border: 1px solid rgba(247, 243, 234, .3);
+  border-radius: 999px;
+  padding: .6rem 1.5rem;
+}
+.speaking-gallery {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.speaking-gallery img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  display: block;
+}
+.speaking-gallery .span-2 { grid-column: span 2; }
+
+/* ---------- Contact / Footer ---------- */
+.contact { padding-bottom: 7rem; }
+.site-footer {
+  background: var(--forest-deep);
+  color: rgba(247, 243, 234, .65);
+  text-align: center;
+  padding: 1.8rem 1.5rem;
+  font-size: .88rem;
+}
+
+/* ---------- Reveal animation ---------- */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 880px) {
+  .hero { grid-template-columns: 1fr; padding-top: 3.5rem; }
+  .hero-art { justify-self: start; max-width: 300px; }
+  .split, .work-item { grid-template-columns: 1fr; gap: 2rem; }
+  .work-item:nth-child(even) .work-media { order: 0; }
+  .service-grid { grid-template-columns: 1fr; }
+  .stats ul { grid-template-columns: repeat(2, 1fr); }
+  .speaking-gallery { grid-template-columns: repeat(2, 1fr); }
+  .hero-photo { justify-self: start; }
+
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: .4rem;
+  }
+  .nav-toggle span {
+    width: 26px;
+    height: 2.5px;
+    background: var(--forest);
+    border-radius: 2px;
+    transition: transform .25s ease, opacity .25s ease;
+  }
+  .nav-toggle.open span:first-child { transform: translateY(4.25px) rotate(45deg); }
+  .nav-toggle.open span:last-child { transform: translateY(-4.25px) rotate(-45deg); }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    background: var(--cream);
+    border-bottom: 1px solid rgba(30, 61, 43, .1);
+    display: none;
+    padding: .5rem 0 1rem;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links li { width: 100%; }
+  .nav-links a { display: block; padding: .8rem 1.5rem; }
+  .nav-links .nav-cta { margin: .5rem 1.5rem 0; display: inline-block; }
+}
+
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="nav-logo" href="#top"><img src="images/logo-nav.png?v=2" alt="EdMo Grows"></a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#story">Story</a></li>
+        <li><a href="#services">What I Do</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#speaking">Speaking</a></li>
+        <li><a class="nav-cta" href="#contact">Work With Me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow reveal">Growing consultant · speaker · brand builder</p>
+        <h1 class="reveal">Growth that benefits<br class="br-desktop"> <em>people</em> and <em>planet</em>.</h1>
+        <p class="hero-sub reveal">I help organisations, communities and landowners create biodiverse, edible growing spaces — and I help purpose-led businesses grow too, through marketing, content and websites that work.</p>
+        <div class="hero-actions reveal">
+          <a class="btn btn-primary" href="#contact">Start a project</a>
+          <a class="btn btn-ghost" href="#story">My story</a>
+        </div>
+      </div>
+      <img class="hero-photo" src="images/ed-2.jpg" alt="Ed smiling in a market garden, holding freshly harvested garlic">
+    </section>
+
+    <!-- ============ IMPACT STATS ============ -->
+    <section class="stats">
+      <ul>
+        <li class="reveal"><strong>5,000+</strong><span>people helped into a growing space of their own</span></li>
+        <li class="reveal"><strong>1,000s</strong><span>of trees planted &amp; metres of native hedgerow established</span></li>
+        <li class="reveal"><strong>10+</strong><span>ponds, wildflower meadows &amp; wild areas created</span></li>
+        <li class="reveal"><strong>4</strong><span>festivals I've been paid to speak at — and counting</span></li>
+      </ul>
+    </section>
+
+    <!-- ============ STORY ============ -->
+    <section class="story section" id="story">
+      <div class="section-inner split">
+        <div class="story-media reveal">
+          <img src="images/ed-3.jpg?v=4" alt="Ed in a polytunnel holding a crate piled high with ripe tomatoes">
+        </div>
+        <div class="story-copy">
+          <p class="eyebrow reveal">The story so far</p>
+          <h2 class="reveal">Food production and wildlife aren't in competition. Done right, each makes the other thrive.</h2>
+          <div class="reveal">
+            <p>I've spent my career proving that growing food and restoring nature belong together. At Roots Allotments I helped more than 5,000 people get access to a growing space of their own — leading on community, events, growing education and site design so that every site made room for wildlife as well as veg beds.</p>
+            <p>That meant thousands of trees in the ground, thousands of metres of native hedgerow, ponds dug and wildflower meadows sown. Biodiversity wasn't a nice-to-have on those sites; it was the design principle.</p>
+            <p>Alongside the growing work, I build brands — a craft I learned over seven years in advertising, at Vice Media and Saatchi &amp; Saatchi, before setting out on my own. I've relaunched websites, set up CRMs, built custom booking systems and created content that helps good businesses reach the people who need them. Growing spaces, growing businesses — it turns out the same care applies to both.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="services section" id="services">
+      <div class="section-inner">
+        <p class="eyebrow reveal">What I do</p>
+        <h2 class="reveal">Five ways I can help you grow.</h2>
+        <div class="service-grid">
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true">🌱</div>
+            <h3>Growing Consultancy</h3>
+            <p>Design and set-up of edible growing spaces that benefit people and pollinators. I use agroecological practices to create biodiverse sites — allotments, community gardens, market gardens — with native hedgerows, ponds and wild areas built in from day one.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true">📈</div>
+            <h3>Marketing &amp; Growth</h3>
+            <p>Strategy and hands-on delivery for purpose-led businesses, backed by seven years in advertising at Vice Media and Saatchi &amp; Saatchi. Brand development, community building, events and campaigns that reach the people who need you.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true">📷</div>
+            <h3>Content Creation</h3>
+            <p>Photography, video and social content shot in the field. From testimonials to course promos, I create content that feels real — because it is.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true">💻</div>
+            <h3>Website Creation</h3>
+            <p>Websites that do more than look good: CRM integration, dynamic booking systems, payment plans. Built around how your business actually runs.</p>
+          </article>
+          <article class="service-card wide reveal">
+            <div class="service-icon" aria-hidden="true">🎤</div>
+            <h3>Public Speaking</h3>
+            <p>Talks on biodiversity-enhancing food production — how we grow more food <em>and</em> more life. I've spoken at Groundswell, Earthed Co, Buddhafield and Crops Not Shops, plus local growing groups and Women's Institutes across the country.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WORK ============ -->
+    <section class="work section" id="work">
+      <div class="section-inner">
+        <p class="eyebrow reveal">Selected work</p>
+        <h2 class="reveal">Projects I'm proud of.</h2>
+
+        <div class="work-list">
+          <article class="work-item reveal">
+            <div class="work-media">
+              <img src="images/ed-1.jpg" alt="Ed crouching among vegetable beds, planting out a tray of seedlings">
+            </div>
+            <div class="work-copy">
+              <h3>Roots Allotments</h3>
+              <p class="work-role">Community · Events · Growing Education · Site Design · Biodiversity Lead</p>
+              <p>Helped over 5,000 people get access to a growing space of their own. I led biodiversity projects across the sites: thousands of trees planted, thousands of metres of native hedgerow, ponds and wildflower meadows — making sure every site benefited wildlife as much as its members.</p>
+            </div>
+          </article>
+
+          <article class="work-item reveal">
+            <div class="work-media">
+              <video controls preload="none" poster="images/qhomes-1.jpg">
+                <source src="videos/qhomes-1.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="work-copy">
+              <h3>Q Homes <span>× Jacks Patch</span></h3>
+              <p class="work-role">Growing Space Design &amp; Set-up</p>
+              <p>Designed and set up 9 bespoke allotments for a sustainable housing project, built on agroecological principles — establishing hedgerow, ponds and wild areas alongside the growing spaces so residents and wildlife both got a home.</p>
+            </div>
+          </article>
+
+          <article class="work-item reveal">
+            <div class="work-media" aria-hidden="true">
+              <!-- <img src="images/pilates.jpg" alt="I Feel Good Pilates Club website"> -->
+              <div class="media-placeholder small"><p>Pilates photo</p></div>
+            </div>
+            <div class="work-copy">
+              <h3>I Feel Good Pilates Club</h3>
+              <p class="work-role">Website Relaunch · CRM · Custom Booking System</p>
+              <p>Relaunched the website, set up a CRM and built a custom dynamic booking system — turning a great studio into a great online business.</p>
+            </div>
+          </article>
+
+          <article class="work-item reveal">
+            <div class="work-media" aria-hidden="true">
+              <!-- <img src="images/cob.jpg" alt="Cob Courses content shoot"> -->
+              <div class="media-placeholder small"><p>Cob Courses photo</p></div>
+            </div>
+            <div class="work-copy">
+              <h3>Cob Courses</h3>
+              <p class="work-role">Content Creation · Website · Booking System <span class="badge">In progress</span></p>
+              <p>Shot social media content and testimonials, and I'm currently building a new website with a dynamic booking system — including monthly payment plans so more people can afford to learn to build with cob.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SPEAKING ============ -->
+    <section class="speaking section" id="speaking">
+      <div class="section-inner">
+        <p class="eyebrow reveal">Public speaking</p>
+        <h2 class="reveal">Talks that put biodiversity on the menu.</h2>
+        <p class="speaking-sub reveal">I speak about biodiversity-enhancing food production — practical, hopeful and grounded in projects that actually got built. Available for festivals, conferences, community groups and private events.</p>
+        <ul class="speaking-logos reveal">
+          <li>Groundswell</li>
+          <li>Earthed Co</li>
+          <li>Buddhafield</li>
+          <li>Crops Not Shops</li>
+          <li>Sacred Wild</li>
+          <li>Women's Institutes</li>
+          <li>Local growing groups</li>
+        </ul>
+        <div class="speaking-gallery reveal">
+          <img class="span-2" src="images/crops-2.jpg" alt="Ed interviewing a panel of growers on hay bales at Crops Not Shops festival">
+          <img src="images/earthed-1.jpg" alt="Ed speaking on stage at the Earthed Co summit at the Barbican">
+          <img src="images/sacredwild-1.jpg" alt="Ed and two fellow speakers at Sacred Wild Wellbeing Festival">
+          <img class="span-2" src="images/crops-1.jpg" alt="A festival crowd gathered outside a workshop tent">
+          <img class="span-2" src="images/earthed-9.jpg" alt="Panel discussion in the Barbican conservatory at the Earthed Co summit">
+        </div>
+        <div class="center reveal">
+          <a class="btn btn-primary" href="#contact">Book me to speak</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact section" id="contact">
+      <div class="section-inner narrow">
+        <p class="eyebrow reveal">Get in touch</p>
+        <h2 class="reveal">Let's grow something together.</h2>
+        <p class="reveal">Whether it's a growing space, a brand, a website or a talk — tell me what you're dreaming of and I'll tell you how I can help.</p>
+        <div class="center reveal">
+          <a class="btn btn-primary btn-lg" href="mailto:edmo.brandconsultant@gmail.com?subject=Let%27s%20grow%20something">edmo.brandconsultant@gmail.com</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> EdMo Grows · Growing spaces for people &amp; pollinators</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+      toggle.classList.toggle('open', open);
+    });
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      links.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }));
+
+    // Work videos: square when idle, expand to widescreen while playing
+    document.querySelectorAll('.work-media video').forEach(v => {
+      v.addEventListener('play', () => v.classList.add('expanded'));
+      v.addEventListener('ended', () => v.classList.remove('expanded'));
+    });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
