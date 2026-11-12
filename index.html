@@ -338,7 +338,7 @@ p + p { margin-top: 1em; }
 
 /* ---------- Instagram feed ---------- */
 .instagram { background: var(--cream-dark); }
-.insta-carousel { position: relative; margin: 2.5rem 0; }
+.insta-carousel { position: relative; margin: 1.75rem auto; max-width: 940px; }
 .insta-feed {
   display: flex;
   gap: 1.5rem;
@@ -350,7 +350,7 @@ p + p { margin-top: 1em; }
 }
 .insta-feed::-webkit-scrollbar { display: none; }
 .insta-feed > .instagram-media {
-  flex: 0 0 min(400px, 82%) !important;
+  flex: 0 0 min(280px, 72%) !important;
   scroll-snap-align: center;
   min-width: 0 !important;
   width: auto !important;
@@ -361,8 +361,8 @@ p + p { margin-top: 1em; }
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
-  width: 44px;
-  height: 44px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   border: none;
   cursor: pointer;
