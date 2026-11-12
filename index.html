@@ -336,6 +336,22 @@ p + p { margin-top: 1em; }
 }
 .speaking-gallery .span-2 { grid-column: span 2; }
 
+/* ---------- Instagram feed ---------- */
+.instagram { background: var(--cream-dark); }
+.insta-feed {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+  margin: 2.5rem 0;
+}
+.insta-feed .instagram-media {
+  min-width: 0 !important;
+  width: 100% !important;
+  max-width: 420px !important;
+  border-radius: var(--radius) !important;
+}
+
 /* ---------- Contact / Footer ---------- */
 .contact { padding-bottom: 7rem; }
 .site-footer {
@@ -371,6 +387,7 @@ p + p { margin-top: 1em; }
 /* ---------- Responsive ---------- */
 @media (max-width: 880px) {
   .hero { grid-template-columns: 1fr; padding-top: 3.5rem; }
+  .insta-feed { grid-template-columns: 1fr; }
   .hero-art { justify-self: start; max-width: 300px; }
   .split, .work-item { grid-template-columns: 1fr; gap: 2rem; }
   .work-item:nth-child(even) .work-media { order: 0; }
@@ -636,6 +653,23 @@ p + p { margin-top: 1em; }
           <a class="btn btn-primary btn-lg" href="mailto:edmo.brandconsultant@gmail.com?subject=Let%27s%20grow%20something">edmo.brandconsultant@gmail.com</a>
         </div>
       </div>
+    </section>
+
+    <!-- ============ INSTAGRAM ============ -->
+    <section class="instagram section" id="instagram">
+      <div class="section-inner">
+        <p class="eyebrow reveal">Follow along</p>
+        <h2 class="reveal">Latest from the 'gram.</h2>
+        <div class="insta-feed reveal">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DfmvmPbs4-J/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DfmvmPbs4-J/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Dc1TsIpsx6U/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/Dc1TsIpsx6U/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DcQvkrLM0sq/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DcQvkrLM0sq/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
+        </div>
+        <div class="center reveal">
+          <a class="btn btn-primary" href="https://www.instagram.com/edmo_grows/" target="_blank" rel="noopener">Follow @edmo_grows</a>
+        </div>
+      </div>
+      <script async src="https://www.instagram.com/embed.js"></script>
     </section>
 
   </main>
