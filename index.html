@@ -693,6 +693,10 @@ p + p { margin-top: 1em; }
             <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DfmvmPbs4-J/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DfmvmPbs4-J/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
             <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Dc1TsIpsx6U/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/Dc1TsIpsx6U/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
             <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DcQvkrLM0sq/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DcQvkrLM0sq/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DcLjOyLOLQu/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DcLjOyLOLQu/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DasE9EAOfnW/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DasE9EAOfnW/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DU0njdYDGPh/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DU0njdYDGPh/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DOvPGQPDNVv/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DOvPGQPDNVv/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
           </div>
           <button class="carousel-arrow next" type="button" aria-label="Next post">›</button>
         </div>
@@ -720,13 +724,29 @@ p + p { margin-top: 1em; }
     // Instagram carousel arrows
     document.querySelectorAll('.insta-carousel').forEach(function (carousel) {
       const feed = carousel.querySelector('.insta-feed');
-      carousel.querySelectorAll('.carousel-arrow').forEach(function (btn) {
+      const prev = carousel.querySelector('.carousel-arrow.prev');
+      const next = carousel.querySelector('.carousel-arrow.next');
+
+      function updateArrows() {
+        const max = feed.scrollWidth - feed.clientWidth;
+        const hasOverflow = max > 4;
+        prev.style.display = hasOverflow && feed.scrollLeft > 4 ? '' : 'none';
+        next.style.display = hasOverflow && feed.scrollLeft < max - 4 ? '' : 'none';
+      }
+
+      [prev, next].forEach(function (btn) {
         btn.addEventListener('click', function () {
           const item = feed.firstElementChild;
           const step = item ? item.getBoundingClientRect().width + 24 : feed.clientWidth;
-          feed.scrollBy({ left: btn.classList.contains('next') ? step : -step, behavior: 'smooth' });
+          feed.scrollBy({ left: btn === next ? step : -step, behavior: 'smooth' });
         });
       });
+
+      feed.addEventListener('scroll', updateArrows, { passive: true });
+      window.addEventListener('resize', updateArrows);
+      window.addEventListener('load', updateArrows);
+      if ('ResizeObserver' in window) new ResizeObserver(updateArrows).observe(feed);
+      updateArrows();
     });
 
     // Mobile nav
