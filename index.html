@@ -338,19 +338,47 @@ p + p { margin-top: 1em; }
 
 /* ---------- Instagram feed ---------- */
 .instagram { background: var(--cream-dark); }
+.insta-carousel { position: relative; margin: 2.5rem 0; }
 .insta-feed {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
   gap: 1.5rem;
-  justify-items: center;
-  margin: 2.5rem 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0 .25rem;
 }
-.insta-feed .instagram-media {
+.insta-feed::-webkit-scrollbar { display: none; }
+.insta-feed > .instagram-media {
+  flex: 0 0 min(400px, 82%) !important;
+  scroll-snap-align: center;
   min-width: 0 !important;
-  width: 100% !important;
-  max-width: 420px !important;
+  width: auto !important;
   border-radius: var(--radius) !important;
 }
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: var(--forest-deep);
+  color: #f7f3ea;
+  font-size: 1.3rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
+  transition: background .2s ease;
+}
+.carousel-arrow:hover { background: var(--moss, #3c5a46); }
+.carousel-arrow.prev { left: -8px; }
+.carousel-arrow.next { right: -8px; }
 
 /* ---------- Contact / Footer ---------- */
 .contact { padding-bottom: 7rem; }
@@ -387,7 +415,6 @@ p + p { margin-top: 1em; }
 /* ---------- Responsive ---------- */
 @media (max-width: 880px) {
   .hero { grid-template-columns: 1fr; padding-top: 3.5rem; }
-  .insta-feed { grid-template-columns: 1fr; }
   .hero-art { justify-self: start; max-width: 300px; }
   .split, .work-item { grid-template-columns: 1fr; gap: 2rem; }
   .work-item:nth-child(even) .work-media { order: 0; }
@@ -660,10 +687,14 @@ p + p { margin-top: 1em; }
       <div class="section-inner">
         <p class="eyebrow reveal">Follow along</p>
         <h2 class="reveal">Latest from the 'gram.</h2>
-        <div class="insta-feed reveal">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DfmvmPbs4-J/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DfmvmPbs4-J/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Dc1TsIpsx6U/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/Dc1TsIpsx6U/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DcQvkrLM0sq/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DcQvkrLM0sq/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
+        <div class="insta-carousel reveal">
+          <button class="carousel-arrow prev" type="button" aria-label="Previous post">‹</button>
+          <div class="insta-feed">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DfmvmPbs4-J/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DfmvmPbs4-J/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Dc1TsIpsx6U/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/Dc1TsIpsx6U/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DcQvkrLM0sq/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DcQvkrLM0sq/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
+          </div>
+          <button class="carousel-arrow next" type="button" aria-label="Next post">›</button>
         </div>
         <div class="center reveal">
           <a class="btn btn-primary" href="https://www.instagram.com/edmo_grows/" target="_blank" rel="noopener">Follow @edmo_grows</a>
@@ -685,6 +716,18 @@ p + p { margin-top: 1em; }
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Instagram carousel arrows
+    document.querySelectorAll('.insta-carousel').forEach(function (carousel) {
+      const feed = carousel.querySelector('.insta-feed');
+      carousel.querySelectorAll('.carousel-arrow').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const item = feed.firstElementChild;
+          const step = item ? item.getBoundingClientRect().width + 24 : feed.clientWidth;
+          feed.scrollBy({ left: btn.classList.contains('next') ? step : -step, behavior: 'smooth' });
+        });
+      });
+    });
 
     // Mobile nav
     const toggle = document.querySelector('.nav-toggle');
