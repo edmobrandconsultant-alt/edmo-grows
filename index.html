@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EdMo Grows — Growth that benefits people and planet</title>
+  <title>EdMo Grows · Growth that benefits people and planet</title>
   <meta name="description" content="Agroecological growing consultancy, marketing, content, websites and public speaking. I design edible growing spaces that feed people and enhance biodiversity.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -397,6 +397,7 @@ p + p { margin-top: 1em; }
   padding: 1.25rem;
   background: rgba(20, 42, 29, .6);
 }
+.modal-overlay[hidden] { display: none; }
 .modal {
   position: relative;
   background: var(--cream);
@@ -434,8 +435,11 @@ p + p { margin-top: 1em; }
   font-size: .92rem;
   color: var(--ink);
 }
-.modal form input,
-.modal form textarea {
+#enquiry-fallback p { font-size: .92rem; }
+#enquiry-fallback a { color: var(--forest); font-weight: 600; }
+#enquiry-fallback .btn { width: 100%; margin-top: .9rem; }
+.modal input,
+.modal textarea {
   display: block;
   width: 100%;
   margin-top: .35rem;
@@ -448,8 +452,8 @@ p + p { margin-top: 1em; }
   border-radius: 10px;
   resize: vertical;
 }
-.modal form input:focus,
-.modal form textarea:focus {
+.modal input:focus,
+.modal textarea:focus {
   outline: none;
   border-color: var(--moss);
 }
@@ -561,7 +565,7 @@ p + p { margin-top: 1em; }
       <div class="hero-inner">
         <p class="eyebrow reveal">Growing consultant · speaker · brand builder</p>
         <h1 class="reveal">Growth that benefits<br class="br-desktop"> <em>people</em> and <em>planet</em>.</h1>
-        <p class="hero-sub reveal">I help organisations, communities and landowners create biodiverse, edible growing spaces — and I help purpose-led businesses grow too, through marketing, content and websites that work.</p>
+        <p class="hero-sub reveal">I help organisations, communities and landowners create biodiverse, edible growing spaces, and I help purpose-led businesses grow too through marketing, content and websites that work.</p>
         <div class="hero-actions reveal">
           <a class="btn btn-primary" href="#contact">Start a project</a>
           <a class="btn btn-ghost" href="#story">My story</a>
@@ -576,7 +580,7 @@ p + p { margin-top: 1em; }
         <li class="reveal"><strong>5,000+</strong><span>people helped into a growing space of their own</span></li>
         <li class="reveal"><strong>1,000s</strong><span>of trees planted &amp; metres of native hedgerow established</span></li>
         <li class="reveal"><strong>10+</strong><span>ponds, wildflower meadows &amp; wild areas created</span></li>
-        <li class="reveal"><strong>4</strong><span>festivals I've been paid to speak at — and counting</span></li>
+        <li class="reveal"><strong>4</strong><span>festivals I've been paid to speak at, and counting</span></li>
       </ul>
     </section>
 
@@ -590,9 +594,9 @@ p + p { margin-top: 1em; }
           <p class="eyebrow reveal">The story so far</p>
           <h2 class="reveal">Food production and wildlife aren't in competition. Done right, each makes the other thrive.</h2>
           <div class="reveal">
-            <p>I've spent my career proving that growing food and restoring nature belong together. At Roots Allotments I helped more than 5,000 people get access to a growing space of their own — leading on community, events, growing education and site design so that every site made room for wildlife as well as veg beds.</p>
+            <p>I've spent my career proving that growing food and restoring nature belong together. At Roots Allotments I helped more than 5,000 people get access to a growing space of their own, leading on community, events, growing education and site design so that every site made room for wildlife as well as veg beds.</p>
             <p>That meant thousands of trees in the ground, thousands of metres of native hedgerow, ponds dug and wildflower meadows sown. Biodiversity wasn't a nice-to-have on those sites; it was the design principle.</p>
-            <p>Alongside the growing work, I build brands — a craft I learned over seven years in advertising, at Vice Media and Saatchi &amp; Saatchi, before setting out on my own. I've relaunched websites, set up CRMs, built custom booking systems and created content that helps good businesses reach the people who need them. Growing spaces, growing businesses — it turns out the same care applies to both.</p>
+            <p>Alongside the growing work, I build brands. It's a craft I learned over seven years in advertising, at Vice Media and Saatchi &amp; Saatchi, before setting out on my own. I've relaunched websites, set up CRMs, built custom booking systems and created content that helps good businesses reach the people who need them. Growing spaces, growing businesses: it turns out the same care applies to both.</p>
           </div>
         </div>
       </div>
@@ -607,7 +611,7 @@ p + p { margin-top: 1em; }
           <article class="service-card reveal">
             <div class="service-icon" aria-hidden="true">🌱</div>
             <h3>Growing Consultancy</h3>
-            <p>Design and set-up of edible growing spaces that benefit people and pollinators. I use agroecological practices to create biodiverse sites — allotments, community gardens, market gardens — with native hedgerows, ponds and wild areas built in from day one.</p>
+            <p>Design and set-up of edible growing spaces that benefit people and pollinators. I use agroecological practices to create biodiverse allotments, community gardens and market gardens, with native hedgerows, ponds and wild areas built in from day one.</p>
           </article>
           <article class="service-card reveal">
             <div class="service-icon" aria-hidden="true">📈</div>
@@ -617,7 +621,7 @@ p + p { margin-top: 1em; }
           <article class="service-card reveal">
             <div class="service-icon" aria-hidden="true">📷</div>
             <h3>Content Creation</h3>
-            <p>Photography, video and social content for your brand, wherever your story happens. From testimonials to launch films, I create content that feels real — because it is.</p>
+            <p>Photography, video and social content for your brand, wherever your story happens. From testimonials to launch films, I create content that feels real, because it is.</p>
           </article>
           <article class="service-card reveal">
             <div class="service-icon" aria-hidden="true">💻</div>
@@ -627,7 +631,7 @@ p + p { margin-top: 1em; }
           <article class="service-card wide reveal">
             <div class="service-icon" aria-hidden="true">🎤</div>
             <h3>Public Speaking</h3>
-            <p>Talks on biodiversity-enhancing food production — how we grow more food <em>and</em> more life. I've spoken at Groundswell, Earthed Co, Buddhafield and Crops Not Shops, plus local growing groups and Women's Institutes across the country.</p>
+            <p>Talks on biodiversity-enhancing food production: how we grow more food <em>and</em> more life. I've spoken at Groundswell, Earthed Co, Buddhafield and Crops Not Shops, plus local growing groups and Women's Institutes across the country.</p>
           </article>
         </div>
       </div>
@@ -660,7 +664,7 @@ p + p { margin-top: 1em; }
             <div class="work-copy">
               <h3>Q Homes <span>× Jacks Patch</span></h3>
               <p class="work-role">Growing Space Design &amp; Set-up</p>
-              <p>Designed and set up 9 bespoke allotments for a sustainable housing project, built on agroecological principles — establishing hedgerow, ponds and wild areas alongside the growing spaces so residents and wildlife both got a home.</p>
+              <p>Designed and set up 9 bespoke allotments for a sustainable housing project, built on agroecological principles, establishing hedgerow, ponds and wild areas alongside the growing spaces so residents and wildlife both got a home.</p>
             </div>
           </article>
 
@@ -671,7 +675,7 @@ p + p { margin-top: 1em; }
             <div class="work-copy">
               <h3>I Feel Good Pilates Club</h3>
               <p class="work-role">Website Relaunch · CRM · Custom Booking System</p>
-              <p>Relaunched the website, set up a CRM and built a custom dynamic booking system — giving the studio the technology it needs so Patrick can concentrate on teaching.</p>
+              <p>Relaunched the website, set up a CRM and built a custom dynamic booking system, giving the studio the technology it needs so Patrick can concentrate on teaching.</p>
             </div>
           </article>
 
@@ -682,7 +686,7 @@ p + p { margin-top: 1em; }
             <div class="work-copy">
               <h3>La Panza <span>× EdMo Grows</span></h3>
               <p class="work-role">Produce Supply · Content Collab <span class="badge">New: collab passata</span></p>
-              <p>Bristol's much-loved Italian trattoria cooks with produce I grow in the market garden. We make content together too — our first reel had Riccardo cooking his mamma's stuffed courgette flowers right where they grew — and our latest collab is a passata made with my tomatoes.</p>
+              <p>Bristol's much-loved Italian trattoria cooks with produce I grow in the market garden. We make content together too. Our first reel had Riccardo cooking his mamma's stuffed courgette flowers right where they grew, and our latest collab is a passata made with my tomatoes.</p>
               <a class="work-link" href="https://www.instagram.com/edmo_grows/reel/DfmvmPbs4-J/" target="_blank" rel="noopener">Watch the passata video →</a>
             </div>
           </article>
@@ -695,7 +699,7 @@ p + p { margin-top: 1em; }
             <div class="work-copy">
               <h3>Cob Courses</h3>
               <p class="work-role">Content Creation · Website · Booking System <span class="badge">In progress</span></p>
-              <p>Shot social media content and testimonials, and I'm currently building a new website with a dynamic booking system — including monthly payment plans so more people can afford to learn to build with cob.</p>
+              <p>Shot social media content and testimonials, and I'm currently building a new website with a dynamic booking system, including monthly payment plans so more people can afford to learn to build with cob.</p>
             </div>
           </article>
           -->
@@ -707,7 +711,7 @@ p + p { margin-top: 1em; }
             <div class="work-copy">
               <h3>Wild Trinket</h3>
               <p class="work-role">Side Project · Brand · Website</p>
-              <p>My own creative side project: make something a little wild for your home. Built from scratch the same way I'd build it for you — brand, content and website, all mine.</p>
+              <p>My own creative side project: make something a little wild for your home. Built from scratch the same way I'd build it for you: brand, content and website, all mine.</p>
               <a class="work-link" href="https://wildtrinket.co.uk" target="_blank" rel="noopener">Visit wildtrinket.co.uk →</a>
             </div>
           </article>
@@ -720,7 +724,7 @@ p + p { margin-top: 1em; }
       <div class="section-inner">
         <p class="eyebrow reveal">Public speaking</p>
         <h2 class="reveal">Talks that put biodiversity on the menu.</h2>
-        <p class="speaking-sub reveal">I speak about biodiversity-enhancing food production — practical, hopeful and grounded in projects that actually got built. Available for festivals, conferences, community groups and private events.</p>
+        <p class="speaking-sub reveal">I speak about biodiversity-enhancing food production. The talks are practical, hopeful and grounded in projects that actually got built. Available for festivals, conferences, community groups and private events.</p>
         <ul class="speaking-logos reveal">
           <li>Groundswell</li>
           <li>Earthed Co</li>
@@ -774,7 +778,7 @@ p + p { margin-top: 1em; }
       <div class="section-inner narrow">
         <p class="eyebrow reveal">Get in touch</p>
         <h2 class="reveal">Let's grow something together.</h2>
-        <p class="reveal">Whether it's a growing space, a brand, a website or a talk — tell me what you're dreaming of and I'll tell you how I can help.</p>
+        <p class="reveal">Whether it's a growing space, a brand, a website or a talk, tell me what you're dreaming of and I'll tell you how I can help.</p>
         <div class="center reveal">
           <button class="btn btn-primary btn-lg" type="button" data-open-enquiry>Tell me what you need</button>
           <p class="contact-alt">Prefer email? <a href="mailto:edmo.brandconsultant@gmail.com?subject=Let%27s%20grow%20something">edmo.brandconsultant@gmail.com</a></p>
@@ -812,6 +816,11 @@ p + p { margin-top: 1em; }
         <button class="btn btn-primary" type="submit">Send</button>
         <p class="modal-note">Sending opens an email to edmo.brandconsultant@gmail.com with your answers already filled in.</p>
       </form>
+      <div id="enquiry-fallback" hidden>
+        <p>Your email app should have opened with your message ready to send. If nothing happened, copy your message below and email it to <a href="mailto:edmo.brandconsultant@gmail.com">edmo.brandconsultant@gmail.com</a>.</p>
+        <textarea id="enquiry-copy" rows="8" readonly></textarea>
+        <button class="btn btn-primary" type="button" id="copy-enquiry">Copy message</button>
+      </div>
     </div>
   </div>
 
@@ -824,6 +833,8 @@ p + p { margin-top: 1em; }
 
     function openEnquiry(e) {
       if (e) e.preventDefault();
+      enquiryForm.hidden = false;
+      document.getElementById('enquiry-fallback').hidden = true;
       modal.hidden = false;
       document.body.style.overflow = 'hidden';
       modal.querySelector('input[name="name"]').focus();
@@ -840,17 +851,29 @@ p + p { margin-top: 1em; }
     modal.addEventListener('click', function (e) { if (e.target === modal) closeEnquiry(); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) closeEnquiry(); });
 
+    const fallback = document.getElementById('enquiry-fallback');
+    const copyBox = document.getElementById('enquiry-copy');
+    const copyBtn = document.getElementById('copy-enquiry');
+
     enquiryForm.addEventListener('submit', function (e) {
       e.preventDefault();
       const data = new FormData(enquiryForm);
-      const subject = encodeURIComponent('Website enquiry from ' + data.get('name'));
-      const body = encodeURIComponent(
+      const message =
         'Who I am:\n' + data.get('name') + '\n\n' +
         'What I need help with:\n' + data.get('help') + '\n\n' +
-        'Contact details:\n' + data.get('contact') + '\n'
-      );
-      window.location.href = 'mailto:edmo.brandconsultant@gmail.com?subject=' + subject + '&body=' + body;
-      closeEnquiry();
+        'Contact details:\n' + data.get('contact');
+      copyBox.value = message;
+      enquiryForm.hidden = true;
+      fallback.hidden = false;
+      const subject = encodeURIComponent('Website enquiry from ' + data.get('name'));
+      window.location.href = 'mailto:edmo.brandconsultant@gmail.com?subject=' + subject + '&body=' + encodeURIComponent(message);
+    });
+
+    copyBtn.addEventListener('click', function () {
+      copyBox.select();
+      const done = function () { copyBtn.textContent = 'Copied!'; setTimeout(function () { copyBtn.textContent = 'Copy message'; }, 2000); };
+      if (navigator.clipboard) navigator.clipboard.writeText(copyBox.value).then(done);
+      else { document.execCommand('copy'); done(); }
     });
 
     // Instagram carousel arrows
