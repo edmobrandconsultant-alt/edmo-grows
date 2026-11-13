@@ -382,6 +382,79 @@ p + p { margin-top: 1em; }
 
 /* ---------- Contact / Footer ---------- */
 .contact { padding-bottom: 7rem; }
+.contact-alt { margin-top: 1.1rem; font-size: .92rem; }
+.contact-alt a { color: var(--forest); font-weight: 600; }
+.footer-email { margin-top: .5rem; }
+
+/* ---------- Enquiry modal ---------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  background: rgba(20, 42, 29, .6);
+}
+.modal {
+  position: relative;
+  background: var(--cream);
+  border-radius: var(--radius);
+  width: 100%;
+  max-width: 460px;
+  max-height: 90vh;
+  overflow: auto;
+  padding: 2rem 1.9rem;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .3);
+}
+.modal h3 {
+  font-family: var(--font-display);
+  color: var(--forest);
+  font-size: 1.4rem;
+  margin-bottom: 1.2rem;
+  padding-right: 2rem;
+}
+.modal-close {
+  position: absolute;
+  top: .9rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.7rem;
+  line-height: 1;
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+.modal-close:hover { color: var(--ink); }
+.modal form label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: .92rem;
+  color: var(--ink);
+}
+.modal form input,
+.modal form textarea {
+  display: block;
+  width: 100%;
+  margin-top: .35rem;
+  padding: .65rem .8rem;
+  font: inherit;
+  font-weight: 400;
+  color: var(--ink);
+  background: #fff;
+  border: 1.5px solid rgba(30, 61, 43, .25);
+  border-radius: 10px;
+  resize: vertical;
+}
+.modal form input:focus,
+.modal form textarea:focus {
+  outline: none;
+  border-color: var(--moss);
+}
+.modal form .btn { width: 100%; margin-top: .4rem; }
+.modal-note { margin-top: .9rem; font-size: .8rem; color: var(--ink-soft); text-align: center; }
 .site-footer {
   background: var(--forest-deep);
   color: rgba(247, 243, 234, .65);
@@ -670,18 +743,6 @@ p + p { margin-top: 1em; }
       </div>
     </section>
 
-    <!-- ============ CONTACT ============ -->
-    <section class="contact section" id="contact">
-      <div class="section-inner narrow">
-        <p class="eyebrow reveal">Get in touch</p>
-        <h2 class="reveal">Let's grow something together.</h2>
-        <p class="reveal">Whether it's a growing space, a brand, a website or a talk — tell me what you're dreaming of and I'll tell you how I can help.</p>
-        <div class="center reveal">
-          <a class="btn btn-primary btn-lg" href="mailto:edmo.brandconsultant@gmail.com?subject=Let%27s%20grow%20something">edmo.brandconsultant@gmail.com</a>
-        </div>
-      </div>
-    </section>
-
     <!-- ============ INSTAGRAM ============ -->
     <section class="instagram section" id="instagram">
       <div class="section-inner">
@@ -708,10 +769,24 @@ p + p { margin-top: 1em; }
       <script async src="https://www.instagram.com/embed.js"></script>
     </section>
 
+    <!-- ============ CONTACT ============ -->
+    <section class="contact section" id="contact">
+      <div class="section-inner narrow">
+        <p class="eyebrow reveal">Get in touch</p>
+        <h2 class="reveal">Let's grow something together.</h2>
+        <p class="reveal">Whether it's a growing space, a brand, a website or a talk — tell me what you're dreaming of and I'll tell you how I can help.</p>
+        <div class="center reveal">
+          <button class="btn btn-primary btn-lg" type="button" data-open-enquiry>Tell me what you need</button>
+          <p class="contact-alt">Prefer email? <a href="mailto:edmo.brandconsultant@gmail.com?subject=Let%27s%20grow%20something">edmo.brandconsultant@gmail.com</a></p>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">
     <p>© <span id="year"></span> EdMo Grows · Growing spaces for people &amp; pollinators</p>
+    <p class="footer-email"><a href="mailto:edmo.brandconsultant@gmail.com">edmo.brandconsultant@gmail.com</a></p>
     <p class="footer-social">
       <a href="https://www.instagram.com/edmo_grows/" target="_blank" rel="noopener" aria-label="EdMo Grows on Instagram (@edmo_grows)">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
@@ -719,8 +794,64 @@ p + p { margin-top: 1em; }
     </p>
   </footer>
 
+  <!-- ============ ENQUIRY MODAL ============ -->
+  <div class="modal-overlay" id="enquiry-modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="enquiry-title">
+      <button class="modal-close" type="button" aria-label="Close">&times;</button>
+      <h3 id="enquiry-title">Let's grow something together.</h3>
+      <form id="enquiry-form">
+        <label>Who are you?
+          <input type="text" name="name" required autocomplete="name" placeholder="Your name">
+        </label>
+        <label>What is it you need help with?
+          <textarea name="help" rows="4" required placeholder="A growing space, a brand, a website, a talk…"></textarea>
+        </label>
+        <label>Contact details
+          <input type="text" name="contact" required placeholder="Email or phone number">
+        </label>
+        <button class="btn btn-primary" type="submit">Send</button>
+        <p class="modal-note">Sending opens an email to edmo.brandconsultant@gmail.com with your answers already filled in.</p>
+      </form>
+    </div>
+  </div>
+
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Enquiry modal
+    const modal = document.getElementById('enquiry-modal');
+    const enquiryForm = document.getElementById('enquiry-form');
+
+    function openEnquiry(e) {
+      if (e) e.preventDefault();
+      modal.hidden = false;
+      document.body.style.overflow = 'hidden';
+      modal.querySelector('input[name="name"]').focus();
+    }
+    function closeEnquiry() {
+      modal.hidden = true;
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('[data-open-enquiry], a[href="#contact"]').forEach(function (el) {
+      el.addEventListener('click', openEnquiry);
+    });
+    modal.querySelector('.modal-close').addEventListener('click', closeEnquiry);
+    modal.addEventListener('click', function (e) { if (e.target === modal) closeEnquiry(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) closeEnquiry(); });
+
+    enquiryForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const data = new FormData(enquiryForm);
+      const subject = encodeURIComponent('Website enquiry from ' + data.get('name'));
+      const body = encodeURIComponent(
+        'Who I am:\n' + data.get('name') + '\n\n' +
+        'What I need help with:\n' + data.get('help') + '\n\n' +
+        'Contact details:\n' + data.get('contact') + '\n'
+      );
+      window.location.href = 'mailto:edmo.brandconsultant@gmail.com?subject=' + subject + '&body=' + body;
+      closeEnquiry();
+    });
 
     // Instagram carousel arrows
     document.querySelectorAll('.insta-carousel').forEach(function (carousel) {
