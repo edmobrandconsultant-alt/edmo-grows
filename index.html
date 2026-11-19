@@ -221,6 +221,7 @@ p + p { margin-top: 1em; }
   object-fit: cover;
 }
 .story-media img { aspect-ratio: 4 / 5; }
+.story-media .story-media-extra { aspect-ratio: 4 / 3; margin-top: 1.2rem; }
 .work-media img { aspect-ratio: 4 / 3; }
 .work-media video {
   width: 100%;
@@ -287,6 +288,14 @@ p + p { margin-top: 1em; }
   padding: 2.4rem;
   border: 1px solid rgba(30, 61, 43, .07);
 }
+.door-photo {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  margin-bottom: 1.4rem;
+}
 .door-title { font-size: 1.6rem; margin-bottom: .3rem; }
 .door-who {
   font-size: .82rem;
@@ -305,8 +314,6 @@ p + p { margin-top: 1em; }
 }
 .bng-callout p { font-size: .95rem; }
 .bng-callout a { color: var(--forest); font-weight: 600; }
-.door-proof { margin-top: 1.1rem; font-size: .95rem; }
-.door-proof strong { color: var(--forest); }
 .product-panel {
   margin-top: 1.3rem;
   padding: 1.3rem 1.4rem;
@@ -341,6 +348,15 @@ p + p { margin-top: 1em; }
   gap: 2.5rem;
   align-items: center;
   margin-top: 1.2rem;
+}
+.case-media video {
+  display: block;
+  width: min(100%, 300px);
+  margin: 0 auto;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background: var(--forest-deep);
 }
 .case-copy h4 {
   font-family: var(--font-body);
@@ -737,15 +753,15 @@ p + p { margin-top: 1em; }
       <div class="section-inner split">
         <div class="story-media reveal">
           <img src="images/ed-strawflowers.jpg" alt="Ed smiling in a patch of tall strawflowers, holding a freshly picked bunch">
+          <img class="story-media-extra" src="images/ed-3.jpg" alt="Ed in a polytunnel holding a crate piled high with ripe tomatoes">
         </div>
         <div class="story-copy">
           <p class="eyebrow reveal">The story so far</p>
           <h2 class="reveal">Food production and wildlife aren't in competition. Done right, each makes the other thrive.</h2>
           <div class="reveal">
             <p>In 2021 I co-founded Roots Allotments and, as one of three co-CEOs from 2021 to 2026, grew it into a national community growing network: 20 communities, 5,000 allotment patches and over 250 acres opened up for people to grow their own food.</p>
-            <p>My side of the business was the member experience end to end. I managed the Patch Manager team across every site and worked hand in hand with operations to keep sites running smoothly and members' experiences superb. I oversaw seeds, plants and growing concept for the network, and shaped the full events schedule across our sites with the events team. I also led the biodiversity programme: 3,000+ trees planted, 2,500m+ of native hedgerow, ponds, and 47 acres of wildflower meadow.</p>
-            <p>As the brand face of Roots I fronted its content, developed the long-form content strategy, and represented the company in the media, on podcasts and on television, including BBC's <em>Just One Thing</em> (Series 2, Episode 3: Gardening, presented by Zoe Ball), inspiring people in Croydon to pick, taste and get their hands in the soil.</p>
-            <p>Alongside the growing work, I build brands. It's a craft I learned over seven years in advertising, at Vice Media and Saatchi &amp; Saatchi, before setting out on my own. I've relaunched websites, set up CRMs, built custom booking systems and created content that helps good businesses reach the people who need them. Growing spaces, growing businesses: it turns out the same care applies to both.</p>
+            <p>My side of the business was the member experience end to end: the Patch Manager team on every site, seeds, plants and growing concept, the events schedule, and a biodiversity programme that planted 3,000+ trees, 2,500m+ of native hedgerow, ponds, and 47 acres of wildflower meadow. As the brand face of Roots I fronted its content and represented the company in the media, including BBC's <em>Just One Thing</em> with Zoe Ball.</p>
+            <p>Alongside the growing work, I build brands: a craft I learned over seven years in advertising at Vice Media and Saatchi &amp; Saatchi. Growing spaces, growing businesses: the same care applies to both.</p>
           </div>
         </div>
       </div>
@@ -759,34 +775,32 @@ p + p { margin-top: 1em; }
         <div class="door-grid">
 
           <article class="door reveal" id="growing-spaces">
-            <div class="service-icon" aria-hidden="true">🌱</div>
+            <img class="door-photo" src="images/qhomes-1.jpg" alt="Aerial view of the nine allotment beds Ed designed at Q Homes">
             <h2 class="door-title">Biodiverse, edible growing spaces</h2>
-            <p class="door-who">For developers, landowners, councils &amp; communities</p>
-            <p>I design and deliver growing spaces that feed people and support wildlife: allotment and community growing sites, native hedgerows, ponds, wildflower areas and orchards, with the events and growing education that bring them to life.</p>
+            <p class="door-who">For developers, councils, communities &amp; home gardens</p>
+            <p>Growing spaces that feed people and support wildlife: allotments, community growing sites, hedgerows, ponds, wildflower areas and orchards. From a whole development to your own back garden turned into a food-producing, biodiverse habitat.</p>
             <aside class="bng-callout">
-              <p><strong>For developers and landowners:</strong> new developments in England must deliver at least 10% biodiversity net gain. Edible growing spaces are one of the few ways to meet that requirement with something residents genuinely use and love. I design allotment and community growing spaces that contribute towards BNG, build community from day one, and make developments easier to sell. <a href="#qhomes">See the Q Homes case study</a>.</p>
+              <p><strong>Building in England?</strong> New developments must deliver at least 10% biodiversity net gain. Edible growing spaces contribute towards BNG with something residents genuinely use and love. <a href="#qhomes">See the Q Homes case study</a>.</p>
             </aside>
-            <p class="door-proof"><strong>Proof:</strong> 9 bespoke allotments, with hedgerow, ponds and wild areas, at the UK's most sustainable housing development.</p>
             <div class="product-panel">
               <h3>Growing Space Feasibility Study</h3>
-              <p>A fixed-fee starting point: site visit, concept sketch, planting and habitat outline, an indicative budget range, and a view on biodiversity net gain contribution. Fixed fee, agreed up front.</p>
+              <p>A fixed-fee starting point: site visit, concept sketch, planting and habitat outline, an indicative budget range, and a view on biodiversity net gain contribution.</p>
             </div>
-            <p class="call-line">Every project starts with a free 30-minute call.</p>
-            <button class="btn btn-primary" type="button" data-open-enquiry>Start with a free call</button>
+            <p class="call-line">Planning something, or stuck on something? Send it my way.</p>
+            <button class="btn btn-primary" type="button" data-open-enquiry>Tell me what you need</button>
           </article>
 
           <article class="door reveal" id="brand-growth">
-            <div class="service-icon" aria-hidden="true">📈</div>
+            <img class="door-photo" src="images/wildtrinket-2.jpg" alt="An open Wild Trinket decoration box: brand, product and content built by Ed">
             <h2 class="door-title">Growing purpose-led brands</h2>
-            <p class="door-who">For food, land &amp; sustainability businesses</p>
-            <p>Strategy and hands-on delivery, backed by seven years in advertising at Vice Media and Saatchi &amp; Saatchi: brand development, campaigns and community building, content creation (I plan and organise shoots, and front them where useful), and websites with booking and CRM built in.</p>
-            <p class="door-proof"><strong>Proof:</strong> I Feel Good Pilates Club runs on a website, CRM and custom booking system I built.</p>
+            <p class="door-who">For food, land, sustainability &amp; wellbeing businesses</p>
+            <p>Strategy and hands-on delivery, backed by seven years in advertising at Vice Media and Saatchi &amp; Saatchi: brand development, campaigns, content creation and shoots, and websites with booking and CRM built in.</p>
             <div class="product-panel">
               <h3>Brand &amp; Growth Sprint</h3>
-              <p>A fixed-scope starting point: positioning, a quick-win marketing plan, and a content and shoot plan for the next quarter. Fixed fee, agreed up front.</p>
+              <p>A fixed-scope starting point: positioning, a quick-win marketing plan, and a content and shoot plan for the next quarter.</p>
             </div>
-            <p class="call-line">Every project starts with a free 30-minute call.</p>
-            <button class="btn btn-primary" type="button" data-open-enquiry>Start with a free call</button>
+            <p class="call-line">Building on success, or hitting a wall? Send it my way.</p>
+            <button class="btn btn-primary" type="button" data-open-enquiry>Tell me what you need</button>
           </article>
         </div>
 
@@ -825,7 +839,7 @@ p + p { margin-top: 1em; }
               <div class="case-copy">
                 <h4>The brief</h4>
                 <p>Q Homes wanted its sustainable housing development to give residents more than houses: real space to grow food, together, with nature built in.</p>
-                <h4>What I delivered</h4>
+                <h4>What I helped deliver</h4>
                 <p>9 bespoke allotments designed and set up on agroecological principles at the UK's most sustainable housing development, with native hedgerow, ponds and wild areas established alongside the growing spaces, so residents and wildlife both got a home.</p>
                 <!-- OUTCOME PENDING: ask Ed for one or two factual outcome lines, then add:
                 <h4>The outcome</h4>
@@ -947,16 +961,16 @@ p + p { margin-top: 1em; }
         <h2 class="reveal">What clients say.</h2>
         <div class="testimonial-grid">
           <figure class="testimonial reveal">
-            <blockquote>[TESTIMONIAL PENDING: Q Homes contact]</blockquote>
+            <blockquote>[TESTIMONIAL PENDING: Jack, Jacks Patch, on the Q Homes project]</blockquote>
+            <figcaption>Jack, Jacks Patch</figcaption>
+          </figure>
+          <figure class="testimonial reveal">
+            <blockquote>[TESTIMONIAL PENDING: Q Homes, on the project]</blockquote>
             <figcaption>[NAME PENDING], Q Homes</figcaption>
           </figure>
           <figure class="testimonial reveal">
             <blockquote>[TESTIMONIAL PENDING: Riccardo, La Panza]</blockquote>
-            <figcaption>[NAME PENDING], La Panza</figcaption>
-          </figure>
-          <figure class="testimonial reveal">
-            <blockquote>[TESTIMONIAL PENDING: Charles Dowding]</blockquote>
-            <figcaption>[NAME PENDING]</figcaption>
+            <figcaption>Riccardo, La Panza</figcaption>
           </figure>
         </div>
       </div>
