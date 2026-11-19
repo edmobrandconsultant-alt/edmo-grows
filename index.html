@@ -12,7 +12,7 @@
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <style>
 /* ============================================================
-   EdMo Grows — site styles
+   EdMo Grows: site styles
    Palette: deep forest green, warm cream, terracotta accent
    ============================================================ */
 
@@ -349,12 +349,30 @@ p + p { margin-top: 1em; }
   padding: 0 .25rem;
 }
 .insta-feed::-webkit-scrollbar { display: none; }
-.insta-feed > .instagram-media {
-  flex: 0 0 min(280px, 72%) !important;
+.insta-feed > .insta-card {
+  flex: 0 0 min(280px, 72%);
   scroll-snap-align: center;
-  min-width: 0 !important;
-  width: auto !important;
-  border-radius: var(--radius) !important;
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: block;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.insta-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+.insta-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(30, 61, 43, .15);
+}
+.video-caption {
+  margin-top: .7rem;
+  text-align: center;
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--moss);
 }
 .carousel-arrow {
   position: absolute;
@@ -577,10 +595,11 @@ p + p { margin-top: 1em; }
     <!-- ============ IMPACT STATS ============ -->
     <section class="stats">
       <ul>
-        <li class="reveal"><strong>5,000+</strong><span>people helped into a growing space of their own</span></li>
-        <li class="reveal"><strong>1,000s</strong><span>of trees planted &amp; metres of native hedgerow established</span></li>
-        <li class="reveal"><strong>10+</strong><span>ponds, wildflower meadows &amp; wild areas created</span></li>
-        <li class="reveal"><strong>4</strong><span>festivals I've been paid to speak at, and counting</span></li>
+        <li class="reveal"><strong>5,000+</strong> <span>people helped into a growing space of their own</span></li>
+        <li class="reveal"><strong>3,000+</strong> <span>trees planted across the network</span></li>
+        <li class="reveal"><strong>47</strong> <span>acres of wildflower meadow created</span></li>
+        <!-- ASK ED: confirm true total of paid talks & workshops incl. venues not listed on site; 5+ covers Groundswell, Earthed Co, Buddhafield, Crops Not Shops, Sacred Wild -->
+        <li class="reveal"><strong>5+</strong> <span>paid public talks &amp; workshops, and counting</span></li>
       </ul>
     </section>
 
@@ -594,8 +613,9 @@ p + p { margin-top: 1em; }
           <p class="eyebrow reveal">The story so far</p>
           <h2 class="reveal">Food production and wildlife aren't in competition. Done right, each makes the other thrive.</h2>
           <div class="reveal">
-            <p>I've spent my career proving that growing food and restoring nature belong together. At Roots Allotments I helped more than 5,000 people get access to a growing space of their own, leading on community, events, growing education and site design so that every site made room for wildlife as well as veg beds.</p>
-            <p>That meant thousands of trees in the ground, thousands of metres of native hedgerow, ponds dug and wildflower meadows sown. Biodiversity wasn't a nice-to-have on those sites; it was the design principle.</p>
+            <p>In 2021 I co-founded Roots Allotments and, as one of three co-CEOs from 2021 to 2026, grew it into a national community growing network: 20 communities, 5,000 allotment patches and over 250 acres opened up for people to grow their own food.</p>
+            <p>My side of the business was the member experience end to end. I managed the Patch Manager team across every site and worked hand in hand with operations to keep sites running smoothly and members' experiences superb. I oversaw seeds, plants and growing concept for the network, and shaped the full events schedule across our sites with the events team. I also led the biodiversity programme: 3,000+ trees planted, 2,500m+ of native hedgerow, ponds, and 47 acres of wildflower meadow.</p>
+            <p>As the brand face of Roots I fronted its content, developed the long-form content strategy, and represented the company in the media, on podcasts and on television, including BBC's <em>Just One Thing</em> (Series 2, Episode 3: Gardening, presented by Zoe Ball), inspiring people in Croydon to pick, taste and get their hands in the soil.</p>
             <p>Alongside the growing work, I build brands. It's a craft I learned over seven years in advertising, at Vice Media and Saatchi &amp; Saatchi, before setting out on my own. I've relaunched websites, set up CRMs, built custom booking systems and created content that helps good businesses reach the people who need them. Growing spaces, growing businesses: it turns out the same care applies to both.</p>
           </div>
         </div>
@@ -650,16 +670,17 @@ p + p { margin-top: 1em; }
             </div>
             <div class="work-copy">
               <h3>Roots Allotments</h3>
-              <p class="work-role">Community · Events · Growing Education · Site Design · Biodiversity Lead</p>
-              <p>Helped over 5,000 people get access to a growing space of their own. I led biodiversity projects across the sites: thousands of trees planted, thousands of metres of native hedgerow, ponds and wildflower meadows.</p>
+              <p class="work-role">Co-founder &amp; Co-CEO · 2021–2026</p>
+              <p>Co-founded Roots and grew it into a national community growing network: 20 communities, 5,000 allotment patches and 250+ acres opened for people to grow their own food. I led the member experience end to end and the biodiversity programme: 3,000+ trees, 2,500m+ of native hedgerow, ponds and 47 acres of wildflower meadow.</p>
             </div>
           </article>
 
           <article class="work-item reveal">
             <div class="work-media">
-              <video controls preload="none" poster="images/qhomes-1.jpg">
+              <video controls preload="none" poster="images/qhomes-1.jpg" aria-label="Video: the Q Homes × Jacks Patch allotment build">
                 <source src="videos/qhomes-1.mp4" type="video/mp4">
               </video>
+              <p class="video-caption">Watch: the Q Homes × Jacks Patch build</p>
             </div>
             <div class="work-copy">
               <h3>Q Homes <span>× Jacks Patch</span></h3>
@@ -711,8 +732,8 @@ p + p { margin-top: 1em; }
             <div class="work-copy">
               <h3>Wild Trinket</h3>
               <p class="work-role">Side Project · Brand · Website</p>
-              <p>My own creative side project: make something a little wild for your home. Built from scratch the same way I'd build it for you: brand, content and website, all mine.</p>
-              <a class="work-link" href="https://wildtrinket.co.uk" target="_blank" rel="noopener">Visit wildtrinket.co.uk →</a>
+              <p>My own creative side project: make something a little wild for your home. Built from scratch the same way I'd build it for you: brand, content and website, all mine. And it's a real shop, with decoration boxes you can buy today.</p>
+              <a class="work-link" href="https://wildtrinket.co.uk" target="_blank" rel="noopener">Shop at wildtrinket.co.uk →</a>
             </div>
           </article>
         </div>
@@ -755,14 +776,14 @@ p + p { margin-top: 1em; }
         <div class="insta-carousel reveal">
           <button class="carousel-arrow prev" type="button" aria-label="Previous post">‹</button>
           <div class="insta-feed">
-            <!-- Pinned posts first (mirrors the Instagram profile), then newest to oldest -->
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DOvPGQPDNVv/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DOvPGQPDNVv/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DPgZiZKjDbP/" data-instgrm-version="14"><a href="https://www.instagram.com/p/DPgZiZKjDbP/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DfmvmPbs4-J/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DfmvmPbs4-J/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/De3kanFDUKh/" data-instgrm-version="14"><a href="https://www.instagram.com/p/De3kanFDUKh/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Dc1TsIpsx6U/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/Dc1TsIpsx6U/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DcQvkrLM0sq/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DcQvkrLM0sq/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DcLjOyLOLQu/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/DcLjOyLOLQu/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote>
+            <!-- Static thumbnails linking out (pinned posts first, then newest to oldest) -->
+            <a class="insta-card" href="https://www.instagram.com/reel/DOvPGQPDNVv/" target="_blank" rel="noopener"><img src="images/insta-DOvPGQPDNVv.jpg" alt="Instagram reel: growing over £1,000 of food from 36 square metres" loading="lazy"></a>
+            <a class="insta-card" href="https://www.instagram.com/p/DPgZiZKjDbP/" target="_blank" rel="noopener"><img src="images/insta-DPgZiZKjDbP.jpg" alt="Instagram post from @edmo_grows" loading="lazy"></a>
+            <a class="insta-card" href="https://www.instagram.com/reel/DfmvmPbs4-J/" target="_blank" rel="noopener"><img src="images/insta-DfmvmPbs4-J.jpg" alt="Instagram reel: the passata collab with La Panza" loading="lazy"></a>
+            <a class="insta-card" href="https://www.instagram.com/p/De3kanFDUKh/" target="_blank" rel="noopener"><img src="images/insta-De3kanFDUKh.jpg" alt="Instagram post from @edmo_grows" loading="lazy"></a>
+            <a class="insta-card" href="https://www.instagram.com/reel/Dc1TsIpsx6U/" target="_blank" rel="noopener"><img src="images/insta-Dc1TsIpsx6U.jpg" alt="Instagram reel: cooking stuffed courgette flowers on the patch with Riccardo of La Panza" loading="lazy"></a>
+            <a class="insta-card" href="https://www.instagram.com/reel/DcQvkrLM0sq/" target="_blank" rel="noopener"><img src="images/insta-DcQvkrLM0sq.jpg" alt="Instagram reel: courgettes on the patch" loading="lazy"></a>
+            <a class="insta-card" href="https://www.instagram.com/reel/DcLjOyLOLQu/" target="_blank" rel="noopener"><img src="images/insta-DcLjOyLOLQu.jpg" alt="Instagram reel with Charles Dowding" loading="lazy"></a>
           </div>
           <button class="carousel-arrow next" type="button" aria-label="Next post">›</button>
         </div>
@@ -770,7 +791,6 @@ p + p { margin-top: 1em; }
           <a class="btn btn-primary" href="https://www.instagram.com/edmo_grows/" target="_blank" rel="noopener">Follow @edmo_grows</a>
         </div>
       </div>
-      <script async src="https://www.instagram.com/embed.js"></script>
     </section>
 
     <!-- ============ CONTACT ============ -->
