@@ -254,23 +254,43 @@ p + p { margin-top: 1em; }
   color: var(--ink-soft);
   margin-bottom: 1.1rem;
 }
+.press-scroller {
+  display: flex;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
 .press-strip {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
-  column-gap: 2.4rem;
-  row-gap: .9rem;
+  gap: 3rem;
+  min-width: max-content;
+  padding-right: 3rem;
   filter: grayscale(1);
+  animation: press-scroll 40s linear infinite;
 }
+.press-scroller:hover .press-strip { animation-play-state: paused; }
 .press-strip li {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.05rem;
   line-height: 1.2;
   color: #6f6f66;
-  text-align: center;
+  white-space: nowrap;
+}
+.press-strip img {
+  height: 26px;
+  width: auto;
+  display: block;
+  opacity: .8;
+}
+@keyframes press-scroll {
+  to { transform: translateX(calc(-100% - 3rem)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .press-strip { animation: none; }
+  .press-scroller { overflow-x: auto; }
 }
 
 /* ---------- Services: two doors ---------- */
@@ -324,8 +344,26 @@ p + p { margin-top: 1em; }
 .product-panel p { font-size: .92rem; }
 .call-line { margin-top: 1.3rem; font-weight: 600; color: var(--forest); }
 .door .btn { margin-top: .8rem; }
-.speaking-strand { margin-top: 2rem; text-align: center; }
+.speaking-strand {
+  margin-top: 2.5rem;
+  margin-inline: auto;
+  max-width: 640px;
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+  text-align: left;
+}
+.speaking-strand img {
+  width: 150px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
 .speaking-strand a { color: var(--forest); font-weight: 600; }
+@media (max-width: 520px) {
+  .speaking-strand img { width: 110px; }
+}
 .service-icon { font-size: 1.8rem; margin-bottom: .9rem; }
 
 /* ---------- Q Homes case study ---------- */
@@ -733,18 +771,32 @@ p + p { margin-top: 1em; }
     <section class="press reveal" aria-label="Press and media credits">
       <div class="section-inner">
         <p class="press-caption">My work has been featured in</p>
-        <ul class="press-strip">
-          <li title="BBC: Just One Thing, Series 2 Episode 3 (Gardening), presented by Zoe Ball">BBC</li>
-          <li>The Telegraph</li>
-          <li>The Times</li>
-          <li>The Guardian</li>
-          <li>House &amp; Garden</li>
-          <li>Gardens Illustrated</li>
-          <li title="Podcast guest">grow, cook, eat, arrange with Sarah Raven &amp; friends</li>
-          <li title="Podcast guest">Growing Up Podcast</li>
-          <li title="Podcast guest">Over the Garden Gate</li>
-          <li title="Podcast guest">The Food Talk Show</li>
-        </ul>
+        <div class="press-scroller">
+          <ul class="press-strip">
+            <li><img src="images/logos/bbc.svg" alt="BBC" title="BBC: Just One Thing, Series 2 Episode 3 (Gardening), presented by Zoe Ball"></li>
+            <li><img src="images/logos/telegraph.svg" alt="The Telegraph"></li>
+            <li><img src="images/logos/times.svg" alt="The Times"></li>
+            <li><img src="images/logos/guardian.svg" alt="The Guardian"></li>
+            <li>House &amp; Garden</li>
+            <li>Gardens Illustrated</li>
+            <li title="Podcast guest">grow, cook, eat, arrange with Sarah Raven &amp; friends</li>
+            <li title="Podcast guest">Growing Up Podcast</li>
+            <li title="Podcast guest">Over the Garden Gate</li>
+            <li title="Podcast guest">The Food Talk Show</li>
+          </ul>
+          <ul class="press-strip" aria-hidden="true">
+            <li><img src="images/logos/bbc.svg" alt=""></li>
+            <li><img src="images/logos/telegraph.svg" alt=""></li>
+            <li><img src="images/logos/times.svg" alt=""></li>
+            <li><img src="images/logos/guardian.svg" alt=""></li>
+            <li>House &amp; Garden</li>
+            <li>Gardens Illustrated</li>
+            <li>grow, cook, eat, arrange with Sarah Raven &amp; friends</li>
+            <li>Growing Up Podcast</li>
+            <li>Over the Garden Gate</li>
+            <li>The Food Talk Show</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -804,7 +856,10 @@ p + p { margin-top: 1em; }
           </article>
         </div>
 
-        <p class="speaking-strand reveal">Also: <a href="#speaking">talks and workshops</a> on biodiversity-enhancing food production and no-dig growing, for festivals, conferences, community groups and private events.</p>
+        <div class="speaking-strand reveal">
+          <img src="images/earthed-5.jpg" alt="Ed and Mitch speaking on stage at the Barbican for the Earthed Co summit">
+          <p>Also: <a href="#speaking">talks and workshops</a> on biodiversity-enhancing food production and no-dig growing, for festivals, conferences, community groups and private events.</p>
+        </div>
       </div>
     </section>
 
