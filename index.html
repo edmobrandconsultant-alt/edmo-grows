@@ -376,7 +376,7 @@ p + p { margin-top: 1em; }
   text-align: left;
 }
 .speaking-strand img {
-  width: 150px;
+  width: 190px;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 10px;
@@ -384,7 +384,8 @@ p + p { margin-top: 1em; }
 }
 .speaking-strand a { color: var(--forest); font-weight: 600; }
 @media (max-width: 520px) {
-  .speaking-strand img { width: 110px; }
+  .speaking-strand { flex-direction: column; align-items: stretch; }
+  .speaking-strand img { width: 100%; }
 }
 .service-icon { font-size: 1.8rem; margin-bottom: .9rem; }
 
