@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EdMo Grows · Growth that benefits people and planet</title>
-  <meta name="description" content="Agroecological growing consultancy, marketing, content, websites and public speaking. I design edible growing spaces that feed people and enhance biodiversity.">
+  <title>EdMo Grows | Growing spaces &amp; brand consultancy, Bath UK</title>
+  <meta name="description" content="Biodiverse, edible growing spaces for developers and communities, including biodiversity net gain. Brand, content and websites for purpose-led businesses. Bath, UK.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Corben:wght@400;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
@@ -238,27 +238,135 @@ p + p { margin-top: 1em; }
   aspect-ratio: auto;
 }
 
-/* ---------- Services ---------- */
+/* ---------- Press strip ---------- */
+.press {
+  padding: 2.6rem 1.5rem;
+  background: var(--cream);
+  border-bottom: 1px solid rgba(30, 61, 43, .08);
+}
+.press-caption {
+  text-align: center;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 1.1rem;
+}
+.press-strip {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2.4rem;
+  row-gap: .9rem;
+  filter: grayscale(1);
+}
+.press-strip li {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  color: #6f6f66;
+  text-align: center;
+}
+
+/* ---------- Services: two doors ---------- */
 .services { background: var(--cream-dark); }
-.service-grid {
+.door-grid {
   margin-top: 2.5rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
+  align-items: start;
 }
-.service-card {
+.door {
   background: var(--cream);
   border-radius: var(--radius);
-  padding: 2.2rem;
+  padding: 2.4rem;
   border: 1px solid rgba(30, 61, 43, .07);
-  transition: transform .2s ease, box-shadow .2s ease;
 }
-.service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 34px rgba(30, 61, 43, .1);
+.door-title { font-size: 1.6rem; margin-bottom: .3rem; }
+.door-who {
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 1rem;
 }
-.service-card.wide { grid-column: 1 / -1; }
+.bng-callout {
+  margin: 1.2rem 0;
+  padding: 1.1rem 1.3rem;
+  background: var(--cream-dark);
+  border-left: 4px solid var(--terracotta);
+  border-radius: 0 10px 10px 0;
+}
+.bng-callout p { font-size: .95rem; }
+.bng-callout a { color: var(--forest); font-weight: 600; }
+.door-proof { margin-top: 1.1rem; font-size: .95rem; }
+.door-proof strong { color: var(--forest); }
+.product-panel {
+  margin-top: 1.3rem;
+  padding: 1.3rem 1.4rem;
+  background: rgba(30, 61, 43, .05);
+  border-radius: 10px;
+}
+.product-panel h3 { font-size: 1.05rem; margin-bottom: .35rem; }
+.product-panel p { font-size: .92rem; }
+.call-line { margin-top: 1.3rem; font-weight: 600; color: var(--forest); }
+.door .btn { margin-top: .8rem; }
+.speaking-strand { margin-top: 2rem; text-align: center; }
+.speaking-strand a { color: var(--forest); font-weight: 600; }
 .service-icon { font-size: 1.8rem; margin-bottom: .9rem; }
+
+/* ---------- Q Homes case study ---------- */
+.case-study {
+  background: var(--cream-dark);
+  border-radius: var(--radius);
+  padding: 2.4rem;
+}
+.case-kicker {
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: .6rem;
+}
+.case-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 2.5rem;
+  align-items: center;
+  margin-top: 1.2rem;
+}
+.case-copy h4 {
+  font-family: var(--font-body);
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin: 1.1rem 0 .3rem;
+}
+.case-copy h4:first-child { margin-top: 0; }
+
+/* ---------- Testimonials (section ships hidden until quotes exist) ---------- */
+.testimonial-grid {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.testimonial {
+  background: var(--cream-dark);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+}
+.testimonial blockquote { font-style: italic; color: var(--ink-soft); }
+.testimonial figcaption { margin-top: 1rem; font-weight: 600; color: var(--forest); font-size: .92rem; }
 
 /* ---------- Work ---------- */
 .work-list { margin-top: 3rem; display: flex; flex-direction: column; gap: 4rem; }
@@ -456,7 +564,9 @@ p + p { margin-top: 1em; }
 #enquiry-fallback p { font-size: .92rem; }
 #enquiry-fallback a { color: var(--forest); font-weight: 600; }
 #enquiry-fallback .btn { width: 100%; margin-top: .9rem; }
+.optional { font-weight: 400; color: var(--ink-soft); }
 .modal input,
+.modal select,
 .modal textarea {
   display: block;
   width: 100%;
@@ -511,9 +621,9 @@ p + p { margin-top: 1em; }
 @media (max-width: 880px) {
   .hero { grid-template-columns: 1fr; padding-top: 3.5rem; }
   .hero-art { justify-self: start; max-width: 300px; }
-  .split, .work-item { grid-template-columns: 1fr; gap: 2rem; }
+  .split, .work-item, .case-grid { grid-template-columns: 1fr; gap: 2rem; }
   .work-item:nth-child(even) .work-media { order: 0; }
-  .service-grid { grid-template-columns: 1fr; }
+  .door-grid, .testimonial-grid { grid-template-columns: 1fr; }
   .stats ul { grid-template-columns: repeat(2, 1fr); }
   .speaking-gallery { grid-template-columns: repeat(2, 1fr); }
   .hero-photo { justify-self: start; }
@@ -603,6 +713,25 @@ p + p { margin-top: 1em; }
       </ul>
     </section>
 
+    <!-- ============ PRESS & MEDIA ============ -->
+    <section class="press reveal" aria-label="Press and media credits">
+      <div class="section-inner">
+        <p class="press-caption">My work has been featured in</p>
+        <ul class="press-strip">
+          <li title="BBC: Just One Thing, Series 2 Episode 3 (Gardening), presented by Zoe Ball">BBC</li>
+          <li>The Telegraph</li>
+          <li>The Times</li>
+          <li>The Guardian</li>
+          <li>House &amp; Garden</li>
+          <li>Gardens Illustrated</li>
+          <li title="Podcast guest">grow, cook, eat, arrange with Sarah Raven &amp; friends</li>
+          <li title="Podcast guest">Growing Up Podcast</li>
+          <li title="Podcast guest">Over the Garden Gate</li>
+          <li title="Podcast guest">The Food Talk Show</li>
+        </ul>
+      </div>
+    </section>
+
     <!-- ============ STORY ============ -->
     <section class="story section" id="story">
       <div class="section-inner split">
@@ -626,34 +755,42 @@ p + p { margin-top: 1em; }
     <section class="services section" id="services">
       <div class="section-inner">
         <p class="eyebrow reveal">What I do</p>
-        <h2 class="reveal">Five ways I can help you grow.</h2>
-        <div class="service-grid">
-          <article class="service-card reveal">
+        <h2 class="reveal">Two ways I can help you grow.</h2>
+        <div class="door-grid">
+
+          <article class="door reveal" id="growing-spaces">
             <div class="service-icon" aria-hidden="true">🌱</div>
-            <h3>Growing Consultancy</h3>
-            <p>Design and set-up of edible growing spaces that benefit people and pollinators. I use agroecological practices to create biodiverse allotments, community gardens and market gardens, with native hedgerows, ponds and wild areas built in from day one.</p>
+            <h2 class="door-title">Biodiverse, edible growing spaces</h2>
+            <p class="door-who">For developers, landowners, councils &amp; communities</p>
+            <p>I design and deliver growing spaces that feed people and support wildlife: allotment and community growing sites, native hedgerows, ponds, wildflower areas and orchards, with the events and growing education that bring them to life.</p>
+            <aside class="bng-callout">
+              <p><strong>For developers and landowners:</strong> new developments in England must deliver at least 10% biodiversity net gain. Edible growing spaces are one of the few ways to meet that requirement with something residents genuinely use and love. I design allotment and community growing spaces that contribute towards BNG, build community from day one, and make developments easier to sell. <a href="#qhomes">See the Q Homes case study</a>.</p>
+            </aside>
+            <p class="door-proof"><strong>Proof:</strong> 9 bespoke allotments, with hedgerow, ponds and wild areas, at the UK's most sustainable housing development.</p>
+            <div class="product-panel">
+              <h3>Growing Space Feasibility Study</h3>
+              <p>A fixed-fee starting point: site visit, concept sketch, planting and habitat outline, an indicative budget range, and a view on biodiversity net gain contribution. Fixed fee, agreed up front.</p>
+            </div>
+            <p class="call-line">Every project starts with a free 30-minute call.</p>
+            <button class="btn btn-primary" type="button" data-open-enquiry>Start with a free call</button>
           </article>
-          <article class="service-card reveal">
+
+          <article class="door reveal" id="brand-growth">
             <div class="service-icon" aria-hidden="true">📈</div>
-            <h3>Marketing &amp; Growth</h3>
-            <p>Strategy and hands-on delivery for purpose-led businesses, backed by seven years in advertising at Vice Media and Saatchi &amp; Saatchi. Brand development, community building, events and campaigns that reach the people who need you.</p>
-          </article>
-          <article class="service-card reveal">
-            <div class="service-icon" aria-hidden="true">📷</div>
-            <h3>Content Creation</h3>
-            <p>Photography, video and social content for your brand, wherever your story happens. From testimonials to launch films, I create content that feels real, because it is.</p>
-          </article>
-          <article class="service-card reveal">
-            <div class="service-icon" aria-hidden="true">💻</div>
-            <h3>Website Creation</h3>
-            <p>Websites that do more than look good: CRM integration, dynamic booking systems, payment plans. Built around how your business actually runs.</p>
-          </article>
-          <article class="service-card wide reveal">
-            <div class="service-icon" aria-hidden="true">🎤</div>
-            <h3>Public Speaking</h3>
-            <p>Talks on biodiversity-enhancing food production: how we grow more food <em>and</em> more life. I've spoken at Groundswell, Earthed Co, Buddhafield and Crops Not Shops, plus local growing groups and Women's Institutes across the country.</p>
+            <h2 class="door-title">Growing purpose-led brands</h2>
+            <p class="door-who">For food, land &amp; sustainability businesses</p>
+            <p>Strategy and hands-on delivery, backed by seven years in advertising at Vice Media and Saatchi &amp; Saatchi: brand development, campaigns and community building, content creation (I plan and organise shoots, and front them where useful), and websites with booking and CRM built in.</p>
+            <p class="door-proof"><strong>Proof:</strong> I Feel Good Pilates Club runs on a website, CRM and custom booking system I built.</p>
+            <div class="product-panel">
+              <h3>Brand &amp; Growth Sprint</h3>
+              <p>A fixed-scope starting point: positioning, a quick-win marketing plan, and a content and shoot plan for the next quarter. Fixed fee, agreed up front.</p>
+            </div>
+            <p class="call-line">Every project starts with a free 30-minute call.</p>
+            <button class="btn btn-primary" type="button" data-open-enquiry>Start with a free call</button>
           </article>
         </div>
+
+        <p class="speaking-strand reveal">Also: <a href="#speaking">talks and workshops</a> on biodiversity-enhancing food production and no-dig growing, for festivals, conferences, community groups and private events.</p>
       </div>
     </section>
 
@@ -675,17 +812,26 @@ p + p { margin-top: 1em; }
             </div>
           </article>
 
-          <article class="work-item reveal">
-            <div class="work-media">
-              <video controls preload="none" poster="images/qhomes-1.jpg" aria-label="Video: the Q Homes × Jacks Patch allotment build">
-                <source src="videos/qhomes-1.mp4" type="video/mp4">
-              </video>
-              <p class="video-caption">Watch: the Q Homes × Jacks Patch build</p>
-            </div>
-            <div class="work-copy">
-              <h3>Q Homes <span>× Jacks Patch</span></h3>
-              <p class="work-role">Growing Space Design &amp; Set-up</p>
-              <p>Designed and set up 9 bespoke allotments for a sustainable housing project, built on agroecological principles, establishing hedgerow, ponds and wild areas alongside the growing spaces so residents and wildlife both got a home.</p>
+          <article class="case-study reveal" id="qhomes">
+            <p class="case-kicker">Case study · Biodiversity net gain in practice</p>
+            <h3>Q Homes <span>× Jacks Patch</span></h3>
+            <div class="case-grid">
+              <div class="case-media">
+                <video controls preload="none" poster="images/qhomes-1.jpg" aria-label="Video: the Q Homes × Jacks Patch allotment build">
+                  <source src="videos/qhomes-1.mp4" type="video/mp4">
+                </video>
+                <p class="video-caption">Watch: the Q Homes × Jacks Patch build</p>
+              </div>
+              <div class="case-copy">
+                <h4>The brief</h4>
+                <p>Q Homes wanted its sustainable housing development to give residents more than houses: real space to grow food, together, with nature built in.</p>
+                <h4>What I delivered</h4>
+                <p>9 bespoke allotments designed and set up on agroecological principles at the UK's most sustainable housing development, with native hedgerow, ponds and wild areas established alongside the growing spaces, so residents and wildlife both got a home.</p>
+                <!-- OUTCOME PENDING: ask Ed for one or two factual outcome lines, then add:
+                <h4>The outcome</h4>
+                <p>[OUTCOME PENDING]</p>
+                -->
+              </div>
             </div>
           </article>
 
@@ -696,7 +842,7 @@ p + p { margin-top: 1em; }
             <div class="work-copy">
               <h3>I Feel Good Pilates Club</h3>
               <p class="work-role">Website Relaunch · CRM · Custom Booking System</p>
-              <p>Relaunched the website, set up a CRM and built a custom dynamic booking system, giving the studio the technology it needs so Patrick can concentrate on teaching.</p>
+              <p>Relaunched the website, set up a CRM and built a custom dynamic booking system, giving the studio the technology it needs so Patrick can concentrate on teaching. Bookings now run through the studio's own website.</p>
             </div>
           </article>
 
@@ -707,7 +853,7 @@ p + p { margin-top: 1em; }
             <div class="work-copy">
               <h3>La Panza <span>× EdMo Grows</span></h3>
               <p class="work-role">Produce Supply · Content Collab <span class="badge">New: collab passata</span></p>
-              <p>Bristol's much-loved Italian trattoria cooks with produce I grow in the market garden. We make content together too. Our first reel had Riccardo cooking his mamma's stuffed courgette flowers right where they grew, and our latest collab is a passata made with my tomatoes.</p>
+              <p>Bristol's much-loved Italian trattoria cooks with produce I grow in the market garden. We make content together too. Our first reel had Riccardo cooking his mamma's stuffed courgette flowers right where they grew, and our latest collab is a passata made with my tomatoes. La Panza now takes bookings direct, commission-free.</p>
               <a class="work-link" href="https://www.instagram.com/edmo_grows/reel/DfmvmPbs4-J/" target="_blank" rel="noopener">Watch the passata video →</a>
             </div>
           </article>
@@ -745,7 +891,8 @@ p + p { margin-top: 1em; }
       <div class="section-inner">
         <p class="eyebrow reveal">Public speaking</p>
         <h2 class="reveal">Talks that put biodiversity on the menu.</h2>
-        <p class="speaking-sub reveal">I speak about biodiversity-enhancing food production. The talks are practical, hopeful and grounded in projects that actually got built. Available for festivals, conferences, community groups and private events.</p>
+        <p class="speaking-sub reveal">I speak about biodiversity-enhancing food production and no-dig growing. The talks are practical, hopeful and grounded in projects that actually got built. Available for festivals, conferences, community groups and private events.</p>
+        <p class="speaking-sub reveal">You might also have heard me on grow, cook, eat, arrange with Sarah Raven &amp; friends, Growing Up Podcast, Over the Garden Gate and The Food Talk Show.</p>
         <ul class="speaking-logos reveal">
           <li>Groundswell</li>
           <li>Earthed Co</li>
@@ -793,6 +940,29 @@ p + p { margin-top: 1em; }
       </div>
     </section>
 
+    <!-- ============ TESTIMONIALS (hidden until real quotes are supplied; do not publish placeholders) ============
+    <section class="testimonials section" id="testimonials">
+      <div class="section-inner">
+        <p class="eyebrow reveal">Kind words</p>
+        <h2 class="reveal">What clients say.</h2>
+        <div class="testimonial-grid">
+          <figure class="testimonial reveal">
+            <blockquote>[TESTIMONIAL PENDING: Q Homes contact]</blockquote>
+            <figcaption>[NAME PENDING], Q Homes</figcaption>
+          </figure>
+          <figure class="testimonial reveal">
+            <blockquote>[TESTIMONIAL PENDING: Riccardo, La Panza]</blockquote>
+            <figcaption>[NAME PENDING], La Panza</figcaption>
+          </figure>
+          <figure class="testimonial reveal">
+            <blockquote>[TESTIMONIAL PENDING: Charles Dowding]</blockquote>
+            <figcaption>[NAME PENDING]</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    ============ END TESTIMONIALS ============ -->
+
     <!-- ============ CONTACT ============ -->
     <section class="contact section" id="contact">
       <div class="section-inner narrow">
@@ -809,7 +979,7 @@ p + p { margin-top: 1em; }
   </main>
 
   <footer class="site-footer">
-    <p>© <span id="year"></span> EdMo Grows · Growing spaces for people &amp; pollinators</p>
+    <p>© <span id="year"></span> EdMo Grows · Growth that benefits people &amp; planet</p>
     <p class="footer-email"><a href="mailto:hey@edmogrows.co.uk">hey@edmogrows.co.uk</a></p>
     <p class="footer-social">
       <a href="https://www.instagram.com/edmo_grows/" target="_blank" rel="noopener" aria-label="EdMo Grows on Instagram (@edmo_grows)">
@@ -832,6 +1002,15 @@ p + p { margin-top: 1em; }
         </label>
         <label>Contact details
           <input type="text" name="contact" required placeholder="Email or phone number">
+        </label>
+        <label>Budget range <span class="optional">(optional)</span>
+          <select name="budget">
+            <option value="">Not sure yet</option>
+            <option>Under £1,000</option>
+            <option>£1,000 to £5,000</option>
+            <option>£5,000 to £15,000</option>
+            <option>£15,000+</option>
+          </select>
         </label>
         <button class="btn btn-primary" type="submit">Send</button>
         <p class="modal-note">Sending opens an email to hey@edmogrows.co.uk with your answers already filled in.</p>
@@ -881,7 +1060,8 @@ p + p { margin-top: 1em; }
       const message =
         'Who I am:\n' + data.get('name') + '\n\n' +
         'What I need help with:\n' + data.get('help') + '\n\n' +
-        'Contact details:\n' + data.get('contact');
+        'Contact details:\n' + data.get('contact') +
+        (data.get('budget') ? '\n\nBudget range:\n' + data.get('budget') : '');
       copyBox.value = message;
       enquiryForm.hidden = true;
       fallback.hidden = false;
